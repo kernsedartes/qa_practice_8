@@ -8,7 +8,9 @@ class ApiClient:
         self.base_url = base_url.rstrip("/")
         self.session = requests.Session()
 
-    def register(self, username: str, email: str, password: str) -> requests.Response:
+    def register(
+        self, username: str, email: str, password: str
+    ) -> requests.Response:
         return self.session.post(
             f"{self.base_url}/api/auth/register",
             json={"username": username, "email": email, "password": password},
@@ -61,7 +63,9 @@ class ApiClient:
             timeout=config.TIMEOUT,
         )
 
-    def get_profile_by_id(self, account_id: int, token: str | None = None) -> requests.Response:
+    def get_profile_by_id(
+        self, account_id: int, token: str | None = None
+    ) -> requests.Response:
         return self.session.get(
             f"{self.base_url}/api/profiles/{account_id}",
             headers=self._bearer(token),
@@ -88,7 +92,9 @@ class ApiClient:
             timeout=config.TIMEOUT,
         )
 
-    def delete_profile(self, account_id: int, token: str | None = None) -> requests.Response:
+    def delete_profile(
+        self, account_id: int, token: str | None = None
+    ) -> requests.Response:
         return self.session.delete(
             f"{self.base_url}/api/profiles/{account_id}",
             headers=self._bearer(token),
