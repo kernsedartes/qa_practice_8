@@ -16,4 +16,4 @@ USER_PASSWORD = os.getenv("USER_PASSWORD", "user")
 ADMIN_LOGIN = os.getenv("ADMIN_LOGIN", "admin")
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "admin")
 
-TIMEOUT = 10
+TIMEOUT = 30

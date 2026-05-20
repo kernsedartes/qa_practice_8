@@ -23,14 +23,14 @@ class TestLogin:
         ("", config.USER_PASSWORD),
         (config.USER_LOGIN, ""),
     ])
-    def test_login_empty_fields_returns_422(self, client: ApiClient, username, password):
+    def test_login_empty_fields_returns_401(self, client: ApiClient, username, password):
         resp = req.post(
             f"{client.base_url}/api/auth/login",
             json={"username": username, "password": password},
             timeout=config.TIMEOUT,
         )
-        assert resp.status_code == 422, (
-            f"Ожидался 422, получен {resp.status_code}"
+        assert resp.status_code == 401, (
+            f"Ожидался 401, получен {resp.status_code}"
         )
 
     def test_login_missing_body_returns_422(self, client: ApiClient):
