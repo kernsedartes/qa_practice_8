@@ -12,6 +12,9 @@ BASE_URL = os.getenv("BASE_URL", "https://secby.ru")
 USER_LOGIN    = os.getenv("USER_LOGIN",    "user")
 USER_PASSWORD = os.getenv("USER_PASSWORD", "user")
 
+MODERATOR_LOGIN    = os.getenv("MODERATOR_LOGIN",    "moderator")
+MODERATOR_PASSWORD = os.getenv("MODERATOR_PASSWORD", "moderator")
+
 ADMIN_LOGIN    = os.getenv("ADMIN_LOGIN",    "admin")
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "admin")
 
